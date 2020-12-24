@@ -1,8 +1,10 @@
-﻿$Allfile =   get-ChildItem   -Path "C:\Users\aly-b\OneDrive\old\Documents\GitHub\00-IT pScript Powershell\techskills-powershell-scripting" 
+﻿$wkdir= Read-Host "Entrer le working dir"
+
+$Allfile =   get-ChildItem   -Path $wkdir
 
 $ACouper =  Read-Host -Prompt "Entrer le lien a couper"
 
-$dir= "C:\Users\aly-b\OneDrive\old\Documents\GitHub\00-IT pScript Powershell\techskills-powershell-scripting\"
+$Mydir= $wkdir
 
 Write-Host $ACouper
 
@@ -14,10 +16,10 @@ foreach( $monFichier in $Allfile ) {
        
       $NouvauNom= $monFichier -replace "$Acouper",  ""
 
-      $CurrentFile= $dir+$monFichier
+      $CurrentFile= $Mydir+$monFichier
        
       Write-Host   $CurrentFile
       Write-Host    $NouvauNom 
 
-      Rename-Item -Path $CurrentFile  -NewName  $NouvauNom
+     Rename-Item -Path $CurrentFile  -NewName  $NouvauNom
 }
