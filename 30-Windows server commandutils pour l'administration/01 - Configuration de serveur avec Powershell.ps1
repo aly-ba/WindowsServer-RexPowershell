@@ -1,0 +1,4 @@
+﻿
+### CONFIGURATION DE L'ORDINATEUR
+
+### Activer partage de fichier et imprimanteGet-NetFirewallRuleGet-NetFirewallRule *fps*Get-NetFirewallRule *fps* | Select Name,EnabledGet-NetFirewallRule *fps* | Select Name,Enabled | Out-GridViewGet-NetFirewallRule *fps* | Enable-NetFirewallRuleGet-NetFirewallRule *fps* | Select Name,Enabled | Out-GridView# Adresse IPNew-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 10.0.0.2 -PrefixLength 8# Renomer l'ordinateur (changer la lettre "x" par le numéro du serveur à renomer)Rename-Computer sx -Restart# Ajouter un ordinateur au domaineSet-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 10.0.0.1Add-Computer -DomainName alphorm.lan -Restart# Redémarrer l'ordinateurRestart-Computer
